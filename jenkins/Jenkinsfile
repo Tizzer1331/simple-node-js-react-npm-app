@@ -1,16 +1,9 @@
-pipeline {
-    agent any
-    stages{
+pipeline{
+    agent anystages{
         stage('Build'){
             steps{
                 sh 'npm install'
             }
         }
-
-        // stage('Test'){
-        //     steps{
-        //         sh'./jenkins/scripts/test.sh'
-        //     }
-        // }
     }
 }
