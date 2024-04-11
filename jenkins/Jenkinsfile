@@ -6,18 +6,18 @@ pipeline{
 
     stages{
         stage('Build'){
-            steps{
+            steps {
                 sh 'npm install'
             }
         }
         stage('Test'){
-            steps{
+            steps {
                 sh './jenkins/scripts/test.sh'
             }
         }
         stage('STAND AND DELIVER'){
-            steps{
-                sh. '/jenkins/scripts/deliver.sh'
+            steps {
+                sh '/jenkins/scripts/deliver.sh'
                 input message: 'finished using the web site? (click "Proceed" to continue)'
                 sh './jenkins/scripts/kill.sh'
             }
